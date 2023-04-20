@@ -1,9 +1,24 @@
+import Header from 'components/Header'
+import HeroSection from 'components/HeroSection'
+import Categories from 'components/Categories'
+import Campaigns from 'components/Campaigns'
+import Favorites from 'components/Favorites'
+import MobileApp from 'components/MobileApp'
+import Cards from 'components/Cards'
+import Footer from 'components/Footer'
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <span className='text-2xl font-bold text-blue-400'>test</span>
-    </div>
+    <>
+    <Header />
+    <HeroSection />
+    <Categories />
+    <Campaigns />
+    <Favorites />
+    <MobileApp />
+    <Cards />
+    <Footer />
+    </>
   );
 }
 
