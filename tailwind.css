@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
 
 @layer base{
   html,body{
@@ -15,4 +16,16 @@
       filter: brightness(5%) invert(90%) sepia(72%) saturate(3333%) hue-rotate(180deg) contrast(102%)
     }
   }
+}
+
+.flag-select{
+  @apply !pb-0
+}
+
+.flag-select button{
+  @apply h-14 border-2 border-gray-200 bg-white rounded transition-colors hover:border-primary-brand-color
+}
+
+.flag-select button >span span:nth-child(2){
+  @apply text-sm pl-2
 }
