@@ -4,8 +4,12 @@ import ReactFlagsSelect from 'react-flags-select';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaFacebook } from 'react-icons/fa';
+import { useWindowWidth } from '@react-hook/window-size';
 export default function HeroSection() {
   const [selected, setSelected] = useState('TR');
+
+  const windowWidth = useWindowWidth();
+
   const phones = {
     US: '+1',
     TR: '+90',
@@ -22,35 +26,39 @@ export default function HeroSection() {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 2500,
-    cssEase: "linear"
+    cssEase: 'linear',
   };
   return (
     <div className='relative h-[500px] before:bg-gradient-to-r before:from-primary-brand-color before:to-transparent before:absolute before: inset-0 before:w-full before:h-full before:z-10'>
-      <Slider {...settings}>
-        <div>
-          <img
-            className='w-full h-[500px] object-cover'
-            src='https://cdn.getir.com/getirweb-images/common/hero-posters/getir-mainpage-4.jpg'
-            alt='slide-1'
-          />
-        </div>
-        <div>
-          <img
-            className='w-full h-[500px] object-cover'
-            src='https://cdn.getir.com/getirweb-images/common/hero-posters/getir-mainpage-2.jpg'
-            alt='slide-2'
-          />
-        </div>
-      </Slider>
-      <div className='container flex justify-between items-center absolute top-0 z-20 left-1/2 -translate-x-1/2 h-full'>
-        <div className='flex flex-col gap-y-8'>
-          <img
-            src='https://getir.com/_next/static/images/bimutluluk-b3a7fcb14fc9a9c09b60d7dc9b1b8fd6.svg'
-            alt='getirB'
-          />
-          <h3 className='text-4xl font-semibold text-white'>
-            Dakikalar icinde <br /> kapinizda
-          </h3>
+      {windowWidth >= 768 && (
+        <Slider {...settings}>
+          <div>
+            <img
+              className='w-full h-[500px] object-cover'
+              src='https://cdn.getir.com/getirweb-images/common/hero-posters/getir-mainpage-4.jpg'
+              alt='slide-1'
+            />
+          </div>
+          <div>
+            <img
+              className='w-full h-[500px] object-cover'
+              src='https://cdn.getir.com/getirweb-images/common/hero-posters/getir-mainpage-2.jpg'
+              alt='slide-2'
+            />
+          </div>
+        </Slider>
+      )}
+      <div className='container flex justify-center sm:justify-between items-center absolute top-0 z-20 left-1/2 -translate-x-1/2 h-full'>
+        <div className='hidden sm:block'>
+          <div className='flex flex-col gap-y-8'>
+            <img
+              src='https://getir.com/_next/static/images/bimutluluk-b3a7fcb14fc9a9c09b60d7dc9b1b8fd6.svg'
+              alt='getirB'
+            />
+            <h3 className='text-sm sm:text-2xl md:text-4xl font-semibold text-white'>
+              Dakikalar icinde <br /> kapinizda
+            </h3>
+          </div>
         </div>
         <div className='w-[400px] rounded-lg bg-gray-50 p-6'>
           <h4 className='text-center text-primary-brand-color font-semibold mb-4'>
