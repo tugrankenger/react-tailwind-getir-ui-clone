@@ -3,7 +3,7 @@ import { FaUserAlt, FaUserPlus } from 'react-icons/fa';
 export default function Header() {
   return (
     <div className='bg-brand-color'>
-      <div className='container mx-auto h-11 flex items-center justify-between'>
+      <div className='container mx-auto h-16 sm:h-11 flex items-center justify-center md:justify-between'>
         <div className='flex items-center gap-x-8'>
           <a onClick={(e) => e.preventDefault()} href='!#'>
             <img
@@ -33,7 +33,7 @@ export default function Header() {
             ></img>
           </a>
         </div>
-        <nav className='flex gap-x-8 text-sm font-semibold'>
+        <nav className='hidden md:flex gap-x-8 text-sm font-semibold'>
           <a
           onClick={(e)=>e.preventDefault()}
             href='!#'

@@ -31,24 +31,26 @@ export default function Campaigns() {
       },
       {
         breakpoint: 768,
-        settings:{
+        settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite:true,
-        }
+          infinite: true,
+        },
       },
     ],
   };
 
   return (
-    <div className='container mx-auto py-8'>
-      <Title>Kampanyalar</Title>
+    <div className='container mx-auto pt-2 px-2 md:px-0 md:pt-8'>
+      <div className='hidden md:block'>
+        <Title>Kampanyalar</Title>
+      </div>
       <Slider className='-mx-2' {...settings}>
         {banners.length &&
           banners.map((banner, index) => (
             <div key={banner.id}>
               <picture className='block px-2'>
-                <img src={banner.image} className='rounded-lg' />
+                <img src={banner.image} className='md:rounded-lg' />
               </picture>
             </div>
           ))}
